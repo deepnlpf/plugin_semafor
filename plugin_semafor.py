@@ -20,7 +20,7 @@ class Plugin(IPlugin):
         PATH_TEMP = PATH_BASE + "/temp/"
         
         self.PATH_SEMAFOR = PATH_BASE
-        self.PATH_SCRIPT = './bin/runSemafor.sh'
+        self.PATH_SCRIPT = './resources/bin/runSemafor.sh'
         self.PATH_RAW_INPUT = PATH_TEMP + "in-sentences.txt"
         self.PATH_RAW_OUTPUT = PATH_TEMP + "out-sentences.txt"
 
