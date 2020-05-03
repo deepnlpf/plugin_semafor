@@ -1,0 +1,18 @@
+{
+    "manifest_version": "1",
+    "name": "SEMAFOR",
+    "keyname": "semafor",
+    "description": "SEMAFOR is a frame-semantic parser developed by Dipanjan Das, Sam Thomson, Meghana Kshirsagar, André F. T. Martins, Nathan Schneider, Desai Chen, and Noah Smith. Open-source software developed for research purposes, SEMAFOR automatically processes English sentences according to the form of semantic analysis in Berkeley FrameNet.",
+    "site": "http://www.cs.cmu.edu/~ark/SEMAFOR/",
+    "version": "3.0 alpha",
+    "author": "RodriguesFAS",
+    "category": "pln",
+    "license": "",
+    "analysis": [{
+        "semantic": [{
+            "name": "Frame Semantic Passing",
+            "keyname": "frame_semantic_parsing",
+            "description": "Frame semantics is a linguistic theory that has been instantiated for English in the FrameNet lexicon."
+        }]
+    }]
+}
