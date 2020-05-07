@@ -19,10 +19,10 @@ echo "export JAVA_HOME_BIN=$path \n" >> config.sh && \
 echo 'export MALT_MODEL_DIR="${BASE_DIR}/semafor/resources/models/semafor_malt_model_20121129" \n' >> config.sh && \
 echo 'export TURBO_MODEL_DIR="{BASE_DIR}/semafor/resources/models/turbo_20130606" \n\n' >> config.sh && \
 echo '"Environment variables:" \n\n' >> config.sh && \
-echo '"SEMAFOR_HOME=${SEMAFOR_HOME}" \n\n' >> config.sh && \
-echo '"CLASSPATH=${CLASSPATH}" \n\n' >> config.sh && \
-echo '"JAVA_HOME_BIN=${JAVA_HOME_BIN}" \n\n' >> config.sh && \
-echo '"MALT_MODEL_DIR=${MALT_MODEL_DIR}"' >> config.sh && \
+echo 'echo "SEMAFOR_HOME=${SEMAFOR_HOME}" \n\n' >> config.sh && \
+echo 'echo "CLASSPATH=${CLASSPATH}" \n\n' >> config.sh && \
+echo 'echo "JAVA_HOME_BIN=${JAVA_HOME_BIN}" \n\n' >> config.sh && \
+echo 'echo "MALT_MODEL_DIR=${MALT_MODEL_DIR}"' >> config.sh && \
 echo 'Download Models..' && \
 # to path: /home/you_user/deepnlpf_data/plugin/semafor
 cd .. && mkdir -p models && cd models && \
