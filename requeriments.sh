@@ -7,7 +7,8 @@ mv semafor-master resources && mkdir temp && \
 cd resources/bin && \
 rm -r config.sh && \
 echo "Enter the path to your java bin." && \
-read -p "Example: /usr/lib/jvm/java-8-openjdk-amd64/bin: " java_home_bin && \
+echo "Example: /usr/lib/jvm/java-8-openjdk-amd64/bin: " && \
+read -n java_home_bin && \
 echo '#!/bin/sh \n\n
 export USER=$USERNAME \n
 export BASE_DIR="/home/${USER}/deepnlpf_data/plugins" \n
@@ -20,8 +21,7 @@ export TURBO_MODEL_DIR="{BASE_DIR}/semafor/resources/models/turbo_20130606" \n
 \necho "SEMAFOR_HOME=${SEMAFOR_HOME}" \n
 \necho "CLASSPATH=${CLASSPATH}" \n
 \necho "JAVA_HOME_BIN=${JAVA_HOME_BIN}" \n
-\necho "MALT_MODEL_DIR=${MALT_MODEL_DIR}" \n
-'>> config.sh && \
+\necho "MALT_MODEL_DIR=${MALT_MODEL_DIR}" '>> config.sh && \
 echo 'Download Models..' && \
 # to path: /home/you_user/deepnlpf_data/plugin/semafor
 cd .. && mkdir -p models && cd models && \
