@@ -7,7 +7,7 @@ mv semafor-master resources && mkdir temp && \
 cd resources/bin && \
 rm -r config.sh && \
 echo "Enter the path to your java bin." && \
-read -p "Example:/usr/lib/jvm/java-8-openjdk-amd64/bin:" java_home_bin && \
+read -p "Example: /usr/lib/jvm/java-8-openjdk-amd64/bin: " java_home_bin && \
 echo '#!/bin/sh \n\n
 export USER=$USERNAME \n
 export BASE_DIR="/home/${USER}/deepnlpf_data/plugins" \n
