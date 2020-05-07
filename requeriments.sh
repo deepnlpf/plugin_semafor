@@ -11,7 +11,7 @@ read -p "Example:/usr/lib/jvm/java-8-openjdk-amd64/bin:" java_home_bin \
 echo -e '#!/bin/sh \
 \n export USER=$USERNAME \
 \n export BASE_DIR="/home/${USER}/deepnlpf_data/plugins" \
-\n export SEMAFOR_HOME="${BASE_DIR}/semafor" \
+\n export SEMAFOR_HOME="${BASE_DIR}/resources" \
 \n export CLASSPATH=".:${SEMAFOR_HOME}/target/Semafor-3.0-alpha-04.jar" \
 \n export JAVA_HOME_BIN=$java_home_bin \
 \n export MALT_MODEL_DIR="${BASE_DIR}/semafor/models/semafor_malt_model_20121129" \
@@ -24,7 +24,7 @@ echo -e '#!/bin/sh \
 '>> config.sh && \
 echo 'Download Models..' \ 
 # to path: /home/you_user/deepnlpf_data/plugin/semafor
-mkdir -p models && \
+cd resources && mkdir -p models && \
 cd models && \
 # to path: /home/you_user/deepnlpf_data/plugin/semafor/models
 wget http://www.ark.cs.cmu.edu/SEMAFOR/semafor_malt_model_20121129.tar.gz && \
