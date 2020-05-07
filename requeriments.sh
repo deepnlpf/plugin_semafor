@@ -9,13 +9,13 @@ cd resources/bin && \
 rm -r config.sh && \
 echo "Enter the path to your java bin." && \
 echo "Path example: /usr/lib/jvm/java-8-openjdk-amd64/bin " && \
-read java_home_bin && \
+read path && \
 echo '#!/bin/sh \n\n
 export USER=$USERNAME \n
 export BASE_DIR="/home/${USER}/deepnlpf_data/plugins" \n
 export SEMAFOR_HOME="${BASE_DIR}/semafor/resources" \n
 export CLASSPATH=".:${SEMAFOR_HOME}/target/Semafor-3.0-alpha-04.jar" \n
-export JAVA_HOME_BIN=$java_home_bin \n
+export JAVA_HOME_BIN=$path \n
 export MALT_MODEL_DIR="${BASE_DIR}/semafor/resources/models/semafor_malt_model_20121129" \n
 export TURBO_MODEL_DIR="{BASE_DIR}/semafor/resources/models/turbo_20130606" \n
 \necho "Environment variables:" \n
