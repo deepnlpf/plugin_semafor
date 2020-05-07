@@ -24,7 +24,6 @@ echo -e '#!/bin/sh \
 '>> config.sh && \
 echo 'Download Models..' \ 
 # to path: /home/you_user/deepnlpf_data/plugin/semafor
-cd .. && \
 mkdir -p models && \
 cd models && \
 # to path: /home/you_user/deepnlpf_data/plugin/semafor/models
