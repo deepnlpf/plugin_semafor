@@ -8,7 +8,7 @@ mv semafor-master resources && mkdir temp && \
 cd resources/bin && \
 rm -r config.sh && \
 echo "Enter the path to your java bin." && \
-echo "Example: /usr/lib/jvm/java-8-openjdk-amd64/bin: " && \
+echo "Path example: /usr/lib/jvm/java-8-openjdk-amd64/bin " && \
 read java_home_bin && \
 echo '#!/bin/sh \n\n
 export USER=$USERNAME \n
