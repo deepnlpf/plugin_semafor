@@ -2,7 +2,7 @@
 wget https://github.com/Noahs-ARK/semafor/archive/master.zip && \
 unzip master.zip && \
 rm -r master.zip && \
-mv semafor-master resources && \
+mv semafor-master resources && mkdir temp && \
 # Config SEMAFOR
 cd semafor/bin && \
 rm -r config.sh && \
