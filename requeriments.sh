@@ -10,7 +10,8 @@ rm -r config.sh && \
 echo "Enter the path to your java bin." && \
 echo 'Path example: "/usr/lib/jvm/java-8-openjdk-amd64/bin"' && \
 read path && \
-echo '#!/bin/sh \n\n export USER=$USERNAME \n' >> config.sh && \
+echo '#!/bin/sh \n\n' >> config.sh && \
+echo 'export USER=$USERNAME \n' >> config.sh && \
 echo 'export BASE_DIR="/home/${USER}/deepnlpf_data/plugins" \n' >> config.sh && \
 echo 'export SEMAFOR_HOME="${BASE_DIR}/semafor/resources" \n' >> config.sh && \
 echo 'export CLASSPATH=".:${SEMAFOR_HOME}/target/Semafor-3.0-alpha-04.jar" \n' >> config.sh && \
