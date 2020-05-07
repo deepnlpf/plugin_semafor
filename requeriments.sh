@@ -4,7 +4,7 @@ unzip master.zip && \
 rm -r master.zip && \
 mv semafor-master resources && mkdir temp && \
 # Config SEMAFOR
-cd semafor/bin && \
+cd semafor/resources/bin && \
 rm -r config.sh && \
 echo "Enter the path to your java bin." \
 read -p "Example:/usr/lib/jvm/java-8-openjdk-amd64/bin:" java_home_bin \
