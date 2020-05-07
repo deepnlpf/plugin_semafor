@@ -1,3 +1,4 @@
+#!/bin/sh
 # Install SEMAFOR
 wget https://github.com/Noahs-ARK/semafor/archive/master.zip && \
 unzip master.zip && \
