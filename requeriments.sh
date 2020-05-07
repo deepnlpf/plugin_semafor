@@ -24,7 +24,7 @@ echo -e '#!/bin/sh \
 '>> config.sh && \
 echo 'Download Models..' \ 
 # to path: /home/you_user/deepnlpf_data/plugin/semafor
-cd resources && mkdir -p models && \
+mkdir -p models && \
 cd models && \
 # to path: /home/you_user/deepnlpf_data/plugin/semafor/models
 wget http://www.ark.cs.cmu.edu/SEMAFOR/semafor_malt_model_20121129.tar.gz && \
