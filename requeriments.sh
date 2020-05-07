@@ -11,17 +11,17 @@ echo "Enter the path to your java bin." && \
 echo 'Path example: "/usr/lib/jvm/java-8-openjdk-amd64/bin"' && \
 read path && \
 echo '#!/bin/sh \n\n' >> config.sh && \
-echo 'export USER=$USERNAME \n' >> config.sh && \
-echo 'export BASE_DIR="/home/${USER}/deepnlpf_data/plugins" \n' >> config.sh && \
-echo 'export SEMAFOR_HOME="${BASE_DIR}/semafor/resources" \n' >> config.sh && \
-echo 'export CLASSPATH=".:${SEMAFOR_HOME}/target/Semafor-3.0-alpha-04.jar" \n' >> config.sh && \
-echo "export JAVA_HOME_BIN=$path \n" >> config.sh && \
-echo 'export MALT_MODEL_DIR="${BASE_DIR}/semafor/resources/models/semafor_malt_model_20121129" \n' >> config.sh && \
+echo 'export USER=$USERNAME' >> config.sh && \
+echo 'export BASE_DIR="/home/${USER}/deepnlpf_data/plugins"' >> config.sh && \
+echo 'export SEMAFOR_HOME="${BASE_DIR}/semafor/resources"' >> config.sh && \
+echo 'export CLASSPATH=".:${SEMAFOR_HOME}/target/Semafor-3.0-alpha-04.jar"' >> config.sh && \
+echo "export JAVA_HOME_BIN=$path" >> config.sh && \
+echo 'export MALT_MODEL_DIR="${BASE_DIR}/semafor/resources/models/semafor_malt_model_20121129"' >> config.sh && \
 echo 'export TURBO_MODEL_DIR="{BASE_DIR}/semafor/resources/models/turbo_20130606" \n\n' >> config.sh && \
-echo '"Environment variables:" \n\n' >> config.sh && \
-echo 'echo "SEMAFOR_HOME=${SEMAFOR_HOME}" \n\n' >> config.sh && \
-echo 'echo "CLASSPATH=${CLASSPATH}" \n\n' >> config.sh && \
-echo 'echo "JAVA_HOME_BIN=${JAVA_HOME_BIN}" \n\n' >> config.sh && \
+echo 'echo "Environment variables:"' >> config.sh && \
+echo 'echo "SEMAFOR_HOME=${SEMAFOR_HOME}"' >> config.sh && \
+echo 'echo "CLASSPATH=${CLASSPATH}"' >> config.sh && \
+echo 'echo "JAVA_HOME_BIN=${JAVA_HOME_BIN}"' >> config.sh && \
 echo 'echo "MALT_MODEL_DIR=${MALT_MODEL_DIR}"' >> config.sh && \
 echo 'Download Models..' && \
 # to path: /home/you_user/deepnlpf_data/plugin/semafor
