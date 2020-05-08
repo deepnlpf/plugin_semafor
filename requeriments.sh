@@ -1,9 +1,10 @@
 #!/bin/sh
+packagesNeeded='maven'
 # Install SEMAFOR
 wget https://github.com/Noahs-ARK/semafor/archive/master.zip && \
 unzip master.zip && \
 rm -r master.zip && \
-mv semafor-master resources && mkdir temp && \
+mv -f semafor-master resources && mkdir -p temp && \
 # Config SEMAFOR
 cd resources/bin && \
 rm -r config.sh && \
@@ -31,7 +32,14 @@ wget http://www.ark.cs.cmu.edu/SEMAFOR/semafor_malt_model_20121129.tar.gz && \
 tar -vzxf semafor_malt_model_20121129.tar.gz && \
 rm -r semafor_malt_model_20121129.tar.gz && \
 echo 'Install Maven..' && \
-sudo apt install maven -y && \
+if [ ! -x "$(command -v mvn)" ]; then
+if [ -x "$(command -v apk)" ];       then sudo apk add --no-cache $packagesNeeded
+elif [ -x "$(command -v apt-get)" ]; then sudo apt-get install $packagesNeeded
+elif [ -x "$(command -v dnf)" ];     then sudo dnf install $packagesNeeded
+elif [ -x "$(command -v zypper)" ];  then sudo zypper install $packagesNeeded
+elif [ -x "$(command -v pacman)" ];  then sudo pacman -Syu $packagesNeeded
+else echo "FAILED TO INSTALL PACKAGE: Package manager not found. You must manually install: $packagesNeeded">&2; fi;
+else echo maven found $(which mvn); fi && \
 cd .. && \
 echo 'Compile SEMAFOR..' && \
 mvn package
