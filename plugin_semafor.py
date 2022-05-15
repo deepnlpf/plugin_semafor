@@ -11,9 +11,7 @@ from deepnlpf.core.output_format import OutputFormat
 
 class Plugin(IPlugin):
 
-    def __init__(self, id_pool, lang, document, pipeline):
-
-        self._id_pool = id_pool
+    def __init__(self, document, pipeline):
         self._document = document
 
         PATH_BASE = path.abspath(path.dirname(__file__))
@@ -25,7 +23,7 @@ class Plugin(IPlugin):
         self.PATH_RAW_OUTPUT = PATH_TEMP + "out-sentences.txt"
 
     def run(self):
-        return self.wrapper(self._document['sentences'])
+        return self.wrapper(self._document)
 
     def wrapper(self, dataset, threads=4):
         '''
@@ -38,7 +36,9 @@ class Plugin(IPlugin):
 
         # check if an output file exists and exclude.
         os.system('cd ' + self.PATH_SEMAFOR +
-                ' && [ -e ' + self.PATH_RAW_OUTPUT + ' ] && rm ' + self.PATH_RAW_OUTPUT)
+                ' && [ -e ' + self.PATH_RAW_OUTPUT + ' ] ' + 
+                ' && rm ' + self.PATH_RAW_OUTPUT +
+                ' && touch '+ self.PATH_RAW_OUTPUT)
 
         # processes a new file.
         try:
@@ -63,7 +63,6 @@ class Plugin(IPlugin):
 
     def out_format(self, annotation):        
         return OutputFormat().doc_annotation(
-            _id_pool=self._id_pool,
             _id_dataset=self._document['_id_dataset'],
             _id_document=self._document['_id'],
             tool="semafor",
